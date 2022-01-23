@@ -6,7 +6,7 @@
 #    By: chajax <chajax@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/18 12:14:46 by chajax            #+#    #+#              #
-#    Updated: 2021/07/14 11:54:53 by chajax           ###   ########.fr        #
+#    Updated: 2022/01/21 23:30:15 by chajax           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,11 +75,8 @@ OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 .c.o: $(SRCS)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(OBJS_B)
 	$(AR) $@ $^
-
-bonus: $(OBJS_B)
-	$(AR) $(NAME) $^
 
 all: $(NAME)
 
